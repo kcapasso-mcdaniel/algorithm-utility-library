@@ -1,4 +1,4 @@
-# Functional Utility Library
+# Algorithm Utility Library
 
 Everything you learn in JavaScript can be represented and remembered with a `function` you create. The goal of this project is to create an interactive utility library of all the JavaScript operations and functions you learn.
 
