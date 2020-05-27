@@ -87,7 +87,7 @@ When a user creates an email under "Nice to meet you" lets add some new logic to
 
 Next, let's "encrypt" the user's password that they entered under "Nice to meet you". We'll use a stupidly simple encryption pattern, but it will serve its purpose here.
 
--  Before logging the password to the console, the application should increment each letter by 1, using its [char code](https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes), keeping capitalization in place. (You'll find [this method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt) handy.) The characters `z` and `Z` should "wrap around" and be replaced by the letters `a` and `A` respectively. All other non-alphabetic characters should stay the same. So a password of "HelloZetlow1~" would be logged in the console as "IfmmpAfumpx1~".
+-  Before logging the password to the console, the application should increment each letter by 1, using its [char code](https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes), keeping capitalization in place. (You'll find [this method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt) handy.) The characters `z` and `Z` should "wrap around" and be replaced by the letters `a` and `A` respectively. All other non-alphabetic characters should stay the same. (How do you know which character codes are alphabetical? Here is [a list of all the alphabetical characters](https://www.kerryr.net/pioneers/ascii2.htm)—look at the "Decimal" column.) So a password of "HelloZetlow1~" would be logged in the console as "IfmmpAfumpx1~".
 
 ## Step 4: Repeat this process with the next repo
 
