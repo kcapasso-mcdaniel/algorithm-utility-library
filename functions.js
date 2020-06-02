@@ -39,10 +39,13 @@ function factorialize(num) {
 // R: numerical value of the longest element of the string
 function longestElement(string) {
    var strSplit = string.split(" ");
-   var wordLength = strSplit.sort(function (a, b) {
-      return b.length - a.length;
+   var words = strSplit.sort(function (word1, word2) {
+      var length1 = word1.length;
+      var length2 = word2.length;
+      length2 - length1;
    });
-   return wordLength[0].length;
+   var result = words.length[0].length;
+   return result;
 }
 
 // Return Largets Numbers in Arrays
