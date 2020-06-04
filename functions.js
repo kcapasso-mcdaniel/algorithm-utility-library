@@ -163,11 +163,11 @@ function frankenSplice(arr1, arr2, n) {
    return newArray;
 }
 
-function frankenSplice(arr1, arr2, n) {
-   let localArr = arr2.slice();
-   localArr.splice(n, 0, ...arr1);
-   return localArr;
-}
+// function frankenSplice(arr1, arr2, n) {
+//    let localArr = arr2.slice();
+//    localArr.splice(n, 0, ...arr1);
+//    return localArr;
+// }
 
 // Falsey Bouncer
 // A1: filter through an array for Falsey Values - [false, null, 0, "", undefined, and NaN]
@@ -178,12 +178,11 @@ function bouncer(arr) {
 }
 console.log(bouncer([7, "ate", "", false, 9]));
 
-// Where do I belong
-// return the index where the given num should go in the sorted array
-// function getIndexToIns(arr, num) {
-//    return arr.filter((val) => num > val).length;
-// }
-
+// Where do I belong - return the index where the given num should go in a sorted array
+// A1: first sort the given array
+// A2: run for loop to determine at which index the given number belongs
+// R1: return index position
+// R2: if num falls at the end of the array must use length to get the value of the index
 function getIndexToIns(arr, num) {
    arr.sort(function (a, b) {
       console.log(arr);
@@ -198,11 +197,16 @@ function getIndexToIns(arr, num) {
    return arr.length;
 }
 
-// Mutations
-//
+// Mutations - given two words find out if the second word contains all the letters of the first word
+// A1: set variables to lowercase for ease of comparison
+// A2: use a for loop to iterate through the letter
+// R1: if the current letter does not exist in the first word return false
+// R2: if the current letter does exist return true
 function mutation(arr) {
+   // set both words to lower case to compare
    let wordOne = arr[0].toLowerCase();
    let wordTwo = arr[1].toLowerCase();
+
    for (var i = 0; i < wordTwo.length; i++) {
       if (wordOne.indexOf(wordTwo[i]) === -1) return false;
    }
@@ -211,8 +215,10 @@ function mutation(arr) {
 
 console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]));
 
-// Chunky Monkey
-//
+// Chunky Monkey - given array return two dimensional array based on the size
+// A1: while loop runs while length of the array is greater than 0
+// A2: splice at the first index to the given size
+// R: the new array
 function chunkArrayInGroups(arr, size) {
    let newArr = [];
    while (arr.length > 0) {
