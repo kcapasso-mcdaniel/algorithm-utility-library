@@ -116,21 +116,107 @@ function truncateString(str, num) {
    }
 }
 
-// // Finders Keepers
-// //
-// //
-// function findElement(arr, func) {
-//    let num = 0;
-//    console.log(num);
-//    return arr.filter(func)[0];
-// }
-// console.log(findElement([1, 3, 5, 9], (num) => num % 2 === 0));
+// Finders Keepers
+//A1: each element of an array is tested against the function
+// R: the first element in the array that passes the function
+function findElement(arr, func = (num) => num % 2 === 0) {
+   let newArr = arr.filter(func);
+   console.log(newArr);
+   return newArr[0];
+}
 
 // Boolean
-// A1: find if the given variable has a boolean value
-// R: true or false
-// function booWho(bool) {
-//    return typeof bool === "boolean";
+// A1: check is value is boolean
+// R: return true if true or return false if not
+function booWho(bool) {
+   console.log(bool);
+   return bool === true || bool === false;
+}
+
+// Title a Case Sentence - syntax is everything
+function titleCase(str) {
+   var newStr = str
+      // make all characters lowercase
+      .toLowerCase()
+      // split the string up to manipulate the elements
+      .split(" ")
+      // make the first letter uppercase
+      .map(function (letters) {
+         return letters[0].toUpperCase() + letters.slice(1);
+      });
+   console.log(newStr);
+   // return the sentence with the first letter of each word capitalized
+   return newStr.join(" ");
+}
+
+// Slice and Splice
+// given two arrays copy each element of the first array to the second array in order
+function frankenSplice(arr1, arr2, n) {
+   let newArray = [];
+   // slice the elements of the second array beginning at 0 and ending at the value of n and push to newArray
+   newArray.push(...arr2.slice(0, n));
+   // push all the elements of the first array to the end of the newArray
+   newArray.push(...arr1);
+   // pushes the remaining elements of the second array beginning at the value of n
+   newArray.push(...arr2.slice(n, arr2.length));
+   // return the new array with the all elements
+   return newArray;
+}
+
+function frankenSplice(arr1, arr2, n) {
+   let localArr = arr2.slice();
+   localArr.splice(n, 0, ...arr1);
+   return localArr;
+}
+
+// Falsey Bouncer
+// A1: filter through an array for Falsey Values - [false, null, 0, "", undefined, and NaN]
+// R: return true or false
+function bouncer(arr) {
+   console.log(arr);
+   return arr.filter((falsey) => falsey);
+}
+console.log(bouncer([7, "ate", "", false, 9]));
+
+// Where do I belong
+// return the index where the given num should go in the sorted array
+// function getIndexToIns(arr, num) {
+//    return arr.filter((val) => num > val).length;
 // }
 
-// booWho(null);
+function getIndexToIns(arr, num) {
+   arr.sort(function (a, b) {
+      console.log(arr);
+      return a - b;
+   });
+   for (let i = 0; i < arr.length; i++) {
+      if (num <= arr[i]) {
+         console.log(i);
+         return i;
+      }
+   }
+   return arr.length;
+}
+
+// Mutations
+//
+function mutation(arr) {
+   let wordOne = arr[0].toLowerCase();
+   let wordTwo = arr[1].toLowerCase();
+   for (var i = 0; i < wordTwo.length; i++) {
+      if (wordOne.indexOf(wordTwo[i]) === -1) return false;
+   }
+   return true;
+}
+
+console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]));
+
+// Chunky Monkey
+//
+function chunkArrayInGroups(arr, size) {
+   let newArr = [];
+   while (arr.length > 0) {
+      newArr.push(arr.splice(0, size));
+   }
+   return newArr;
+}
