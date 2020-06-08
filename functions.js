@@ -93,9 +93,9 @@ function confirmEnding(str, target) {
 // Repeat a String
 // A1: using a for loop we run the function through the string according to the given number
 // R: string repeated according to the parameters given
-function repeatStringNumTimes(str, num) {
-   var newStr = "";
-   for (let i = 0; i < num; i++) {
+function repeatStringNumTimes(str, numOfTimes) {
+   var newStr = " ";
+   for (let repeatNum = 0; repeatNum < numOfTimes; repeatNum++) {
       newStr += str;
    }
    console.log(newStr);
